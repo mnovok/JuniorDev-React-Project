@@ -1,0 +1,146 @@
+  .navigationWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .navigationBar {
+    background-image: linear-gradient(to right, #2E68F4, #3094F8);
+    padding: 25px 0;
+    width: 100%; 
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    z-index: 1000; 
+  }
+  
+  .navigationLinks {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .navigationLinks li {
+    margin-right: 75px; 
+    font-size: larger;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  .navigationLinks li:last-child {
+    margin-right: 0;
+  }
+  
+  .navigationLinks li a {
+    text-decoration: none;
+    color: #f4ebeb;
+    font-weight: lighter;
+    transition: color 0.3s ease;
+  }
+  
+  .navigationLinks li a.active {
+    font-weight: bolder;
+  }
+  
+  .navigationLinks li a:not(.active):hover {
+    color: #F00000; 
+    font-weight: normal;
+  }
+  
+  .mobileMenuButton {
+    display: none; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .mobileMenu {
+    display: none; 
+  }
+  
+  .adminCheckbox {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 20px;
+  }
+
+.adminLabel {
+    color: #f4ebeb; 
+    font-weight: lighter;
+}
+
+.adminCheckbox label {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.adminCheckbox label:hover {
+    color: #F00000; 
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #f4ebeb;
+    border-radius: 5px;;
+    outline: none;
+    cursor: pointer;
+    vertical-align: -2px;
+    margin-right: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #f4ebeb; 
+}
+
+@media (max-width: 768px) {
+    .navigationBar {
+      justify-content: space-between;
+    }
+  
+    .mobileMenuButton {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #f4ebeb;
+      font-size: 1.5rem;
+    }
+  
+    .mobileMenu {
+      display: block;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #2E68F4;
+      padding: 10px 0;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    .mobileMenuOpen .mobileMenu {
+      opacity: 1;
+      pointer-events: all;
+    }
+  
+    .navigationLinks {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .navigationLinks li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
