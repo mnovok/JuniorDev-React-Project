@@ -1,0 +1,79 @@
+.backgroundImage {
+    position: relative;
+    height: 100vh; 
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center; 
+}
+
+.backgroundImage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/85/c9/7e/caption.jpg?w=1200&h=-1&s=1);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.homeWrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.homeWrapper h1 {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.homeWrapper h3 {
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: x-large;
+}
+
+.aboutWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
+.aboutText {
+    flex: 1;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 35px;
+    padding-right: 15px;
+}
+
+.aboutImage {
+    flex: 1;
+    text-align: right;
+}
+
+.aboutImage img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.formWrapper {
+    border: 1px solid #444; 
+    border-radius: 5px; 
+    width: 700px;
+}
