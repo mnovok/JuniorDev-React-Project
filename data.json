@@ -1,10 +1,121 @@
 {
-    "messages": [
+  "messages": [
+    {
+      "id": "1",
+      "name": "Marija Novokmet",
+      "email": "mnovok@yahoo.com",
+      "message": "I love this page!"
+    },
+    {
+      "id": "5a6d",
+      "name": "Ante Mornar",
+      "email": "mornnar5@gmail.com",
+      "message": "Nadam se novim stranicama!"
+    }
+  ],
+  "activities": [
+    {
+      "id": "1",
+      "name": "Volonterska akcija čišćenja parka",
+      "description": "Pridružite nam se u čišćenju lokalnog parka kako bismo očuvali okoliš. Svi su dobrodošli!",
+      "organizer": "Udruga za zaštitu okoliša",
+      "location": "Park šuma Marjan, Split",
+      "date": "15.5.2024.",
+      "time": "10:00 - 14:00",
+      "image": "https://split.gg/wp-content/uploads/2016/05/marjan_vidilica.jpg",
+      "participants": [
         {
-            "id": "1",
-            "name": "Marija Novokmet",
-            "email": "mnovok@yahoo.com",
-            "message": "I love this page!"
+          "id": "101",
+          "name": "Ana Horvat"
+        },
+        {
+          "id": "102",
+          "name": "Marko Petrović"
         }
-    ]
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Radionica izrade ekoloških torbi",
+      "description": "Dođite naučiti kako sami izraditi ekološke platnene torbe i doprinesite smanjenju korištenja plastike.",
+      "organizer": "Udruga za zaštitu okoliša",
+      "location": "Kulturni centar 'Sunce', Split",
+      "date": "26.5.2024.",
+      "time": "16:00 - 18:00",
+      "image": "https://media.skilldeer.com/550x450/8df9ae6b91d7ea7287b3230fff922a945d7f51cb.png",
+      "participants": [
+        {
+          "id": "0.12710975782827982",
+          "name": "Marija Marić"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Čišćenje plaže Čiovo",
+      "description": "Pridružite se volonterskoj akciji čišćenja plaže Čiovo kako bismo očistili obalu od otpada i sačuvali ljepotu našeg priobalnog područja.",
+      "organizer": "Ekološka udruga Trogir",
+      "location": "Plaža Čiovo, Trogir",
+      "date": "15.06.2024.",
+      "time": "10:00 - 12:00",
+      "image": "https://lugia-boats.com/wp-content/uploads/2023/08/wyspa-ciovo.jpeg",
+      "participants": []
+    },
+    {
+      "id": "4",
+      "name": "Dijeljenje obroka potrebitima",
+      "description": "Pridružite se volonterskoj akciji dijeljenja obroka potrebitima u Omišu kako bismo pružili podršku onima koji se bore s ekonomskim izazovima i osigurali da imaju pristup hranom.",
+      "organizer": "Humanitarna udruga Omiš",
+      "location": "Centar grada Omiša",
+      "date": "20.06.2024.",
+      "time": "09:00 - 14:00",
+      "image": "https://t3.ftcdn.net/jpg/02/30/17/68/360_F_230176885_oYkNIt6oxQn7HzjmYvQBCU323RXuIMax.jpg",
+      "participants": [
+        {
+          "id": "101",
+          "name": "Ana Horvat"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Uređenje dječjeg igrališta",
+      "description": "Pridružite se volonterskoj akciji uređenja dječjeg igrališta u Solinu kako bismo stvorili siguran i zabavan prostor za djecu u našoj zajednici.",
+      "organizer": "Volonterski centar Solin",
+      "location": "Dječje igralište, Solin",
+      "date": "25.06.2024.",
+      "time": "11:00 - 13:00",
+      "image": "https://djetelina.hr/wp-content/uploads/2022/07/Slika-4-igraliste-kod-MUP-a-Solin-djetelina.hr_.jpg",
+      "participants": [
+        {
+          "id": "107",
+          "name": "Ivana Ivanda"
+        },
+        {
+          "id": "109",
+          "name": "Joško Jurić"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Čišćenje obale rijeke Cetine",
+      "description": "Pridružite nam se u volonterskoj akciji čišćenja obale rijeke Cetine kako bismo očuvali ljepotu prirode i zaštitili okoliš od onečišćenja.",
+      "organizer": "Volonterski centar Trilj",
+      "location": "Obala rijeke Cetine, Trilj",
+      "date": "20.08.2024.",
+      "time": "09:00 - 12:00",
+      "image": "https://apihrt.akamaized.net/media/f0/7a/pxl-160516-13013670-20230824072320.webp",
+      "participants": [
+        {
+          "id": "0.8094960898213155",
+          "name": "Antonio Brdar"
+        },
+        {
+          "id": "0.7140422814032232",
+          "name": "Lea Matić"
+        }
+      ]
+    }
+  ]
 }

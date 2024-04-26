@@ -20,10 +20,10 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3001/messages', formData);
-      alert('Message submitted successfully!');
+      alert('Poruka uspješno poslana!');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Error submitting message:', error);
+      console.error('Pogreška prilikom slanja poruke:', error);
     }
   };
 
@@ -31,15 +31,15 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Ime i prezime:
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
       </label>
       <label>
         Email:
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        <input type="email" name="email" value={formData.email} onChange={handleChange} required/>
       </label>
       <label>
        Poruka:
-        <textarea name="message" value={formData.message} onChange={handleChange} />
+        <textarea name="message" value={formData.message} onChange={handleChange} required/>
       </label>
       <button type="submit">Pošalji</button>
     </form>

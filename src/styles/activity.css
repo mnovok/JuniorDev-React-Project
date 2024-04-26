@@ -1,0 +1,78 @@
+.activityWrapper h3 {
+    letter-spacing: 3px;
+    margin-top: 105px;
+    margin-bottom: 20px;
+}
+
+.activity {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 400px; 
+    text-align: left;
+}
+  
+#activityName {
+    letter-spacing: 3px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.activity .details {
+    display: none;
+}
+  
+.activity:hover .details {
+    display: block; 
+}
+
+.activities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 100%;  */
+    gap: 20px;
+}
+
+.imageContainer {
+    width: 100%; 
+    max-height: 250px;
+    height: auto; 
+    overflow: hidden;
+    margin-bottom: 10px; 
+}
+
+.activityImage {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+button {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    align-self: center;
+  }
+  
+button:hover {
+    background-color: #0056b3;
+}
+
+.activity input {
+    width: 50%; 
+    padding: 10px; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f4f9f9;
+    color: #333;
+}
+
+.confirmBtn {
+    margin-left: 10px;
+}

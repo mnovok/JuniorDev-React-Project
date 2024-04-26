@@ -47,7 +47,7 @@ const Navigation: React.FC = () => {
         <li className="adminCheckbox">
           <label>
             <input type="checkbox" checked={role === 'admin'} onChange={toggleRole} />
-            <span className="adminLabel">{role === 'admin' ? 'Admin' : 'User'}</span>
+            <span className="adminLabel">{role === 'admin' ? 'Admin' : 'Korisnik'}</span>
           </label>
         </li>
       </ul>

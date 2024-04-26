@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm';
 
 const Pocetna: React.FC = () => {
   return (
-    <>
+    <div>
         <div className="backgroundImage">
             <div className='homeWrapper'>
                 <img src='srceJadrana.png' height={150} width={150} alt="Background"></img>
@@ -31,10 +31,16 @@ const Pocetna: React.FC = () => {
 
         <h2>Kontakt</h2>
         <div className="formWrapper">
-            <ContactForm/>
+            <div className="form">
+                <ContactForm/>
+            </div>
+            <div className="formText">
+                <p>Stranicu izradila Marija Novokmet</p>
+                <p>studentica 1. godine diplomskog sveucilišnog studija Računarstva na FESB-u</p>
+            </div>
         </div>
 
-        </>
+        </div>
   );
 };
 
