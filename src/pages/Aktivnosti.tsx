@@ -2,24 +2,63 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/activity.css';
 import Activity from '../components/Activity';
+import { useUserRole } from '../components/UserRoleContext';
+import AddActivity from '../components/AddActivity';
+
+interface ActivityFormData {
+  name: string;
+  date: string;
+  description: string;
+  organizer: string;
+  location: string;
+  time: string;
+  image: string;
+  participants: string[];
+}
 
 const Aktivnosti: React.FC = () => {
   const [activities, setActivities] = useState([]);
+  const { role } = useUserRole();
+  const [showAddActivityPopup, setShowAddActivityPopup] = useState(false);
 
-  useEffect(() => {
+  const handleAddButton = () => {
+    setShowAddActivityPopup(true); 
+  };
+
+  const handleSubmitActivity = (formData: ActivityFormData) => {
+    axios.post(`http://localhost:3001/activities/`, formData)
+      .then(response => {
+        console.log('Activity added successfully:', response.data);
+        fetchActivities();
+      })
+      .catch(error => {
+        console.error('Error adding activity:', error);
+      });
+  };
+
+  const fetchActivities = () => {
     axios.get('http://localhost:3001/activities')
       .then(response => {
         setActivities(response.data);
-        console.log(activities)
       })
       .catch(error => {
         console.error('Error fetching activities:', error);
       });
+  };
+
+  useEffect(() => {
+    fetchActivities(); //inicijalni dohvat podataka
   }, []);
 
   return (
     <div className='activityWrapper'>
       <h3>Prati i prijavi se na buduće aktivnosti</h3>
+
+      {role === 'admin' && (
+        <button className='addActivityBtn' onClick={handleAddButton}>Dodaj aktivnost</button>
+      )}
+
+      {showAddActivityPopup && <AddActivity onClose={() => setShowAddActivityPopup(false)} onSubmit={handleSubmitActivity} />}    
 
       <div className="activities">
         {activities.map(activity => (
