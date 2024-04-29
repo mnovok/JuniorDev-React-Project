@@ -5,6 +5,11 @@ import Activity from '../components/Activity';
 import { useUserRole } from '../components/UserRoleContext';
 import AddActivity from '../components/AddActivity';
 
+interface Participant {
+  id: string;
+  name: string;
+}
+
 interface ActivityFormData {
   name: string;
   date: string;
@@ -13,11 +18,12 @@ interface ActivityFormData {
   location: string;
   time: string;
   image: string;
-  participants: string[];
+  participants: Participant[];
+  isAdmin: boolean;
 }
 
 const Aktivnosti: React.FC = () => {
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useState<ActivityFormData[]>([]);
   const { role } = useUserRole();
   const [showAddActivityPopup, setShowAddActivityPopup] = useState(false);
 
@@ -35,6 +41,7 @@ const Aktivnosti: React.FC = () => {
         console.error('Error adding activity:', error);
       });
   };
+  
 
   const fetchActivities = () => {
     axios.get('http://localhost:3001/activities')
@@ -44,6 +51,10 @@ const Aktivnosti: React.FC = () => {
       .catch(error => {
         console.error('Error fetching activities:', error);
       });
+  };
+
+  const handleDeleteParticipant = () => {
+    fetchActivities();
   };
 
   useEffect(() => {
@@ -73,6 +84,8 @@ const Aktivnosti: React.FC = () => {
             time={activity.time}
             image={activity.image}
             participants={activity.participants}
+            isAdmin={role === 'admin'}
+            onDeleteParticipant={handleDeleteParticipant}
           />
         ))}
       </div>

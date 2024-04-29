@@ -88,12 +88,8 @@
       "image": "https://djetelina.hr/wp-content/uploads/2022/07/Slika-4-igraliste-kod-MUP-a-Solin-djetelina.hr_.jpg",
       "participants": [
         {
-          "id": "107",
-          "name": "Ivana Ivanda"
-        },
-        {
-          "id": "109",
-          "name": "Joško Jurić"
+          "id": "0.0022150570026702177",
+          "name": "Marija Novak"
         }
       ]
     },
@@ -110,10 +106,6 @@
         {
           "id": "0.8094960898213155",
           "name": "Antonio Brdar"
-        },
-        {
-          "id": "0.7140422814032232",
-          "name": "Lea Matić"
         }
       ]
     }

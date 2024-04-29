@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/activity.css';
+import { RiDeleteBinLine } from "react-icons/ri";
 
 interface Participant {
     id: string;
@@ -17,9 +18,11 @@ interface ActivityProps {
     time: string;
     image: string;
     participants: Participant[];
+    isAdmin: boolean;
+    onDeleteParticipant: () => void;
 }
 
-const Activity: React.FC<ActivityProps> = ({id, name, date, description, organizer, location, time, image, participants}) => {
+const Activity: React.FC<ActivityProps> = ({id, name, date, description, organizer, location, time, image, participants, isAdmin, onDeleteParticipant}) => {
     const [showForm, setShowForm] = useState(false);
     const [participantName, setParticipantName] = useState('');
 
@@ -36,7 +39,8 @@ const Activity: React.FC<ActivityProps> = ({id, name, date, description, organiz
             await axios.patch(`http://localhost:3001/activities/${id}`, { participants: updatedParticipants })
             .then(res => {
                 axios.get(`http://localhost:3001/activities/`)
-                window.location.reload();
+                // window.location.reload();
+                onDeleteParticipant();
             });
             alert('Uspješno prijavljeni!');
             setParticipantName('');
@@ -46,9 +50,42 @@ const Activity: React.FC<ActivityProps> = ({id, name, date, description, organiz
         }
     };
     
+    const handleDeleteParticipant = async (participantId: string) => {
+        const confirmed = window.confirm("Jeste li sigurni da želite izbrisati označenog suidonika?");
+        if (!confirmed) {
+            return; 
+        }
+        try {
+            const filteredParticipants = participants.filter(participant => participant.id !== participantId);
+            await axios.patch(`http://localhost:3001/activities/${id}`, { participants: filteredParticipants });
+            onDeleteParticipant();
+            alert('Sudionik uspješno izbrisan!');
+        } catch (error) {
+            console.error('Pogreška prilikom brisanja sudionika:', error);
+        }
+    };
+
+    const handleDeleteActivity = async (activityId: string) => {
+        const confirmed = window.confirm("Jeste li sigurni da želite izbrisati ovu aktivnost?");
+        if (!confirmed) {
+            return; 
+        }
+        try {
+            await axios.delete(`http://localhost:3001/activities/${id}`);
+            onDeleteParticipant();
+            alert('Aktivnost uspješno izbrisana!');
+        } catch (error) {
+            console.error('Pogreška prilikom brisanja aktivnosti:', error);
+        }
+    };
 
     return (
         <div className="activity">
+             <div className="deleteActivityContainer">
+                {isAdmin && (
+                    <RiDeleteBinLine onClick={() => handleDeleteActivity(id)} className="deleteIcon deleteActivity" />
+                )}
+            </div>
             <div className="imageContainer"> 
                 <img src={image} alt="Activity Image" className="activityImage" />
             </div>
@@ -62,9 +99,15 @@ const Activity: React.FC<ActivityProps> = ({id, name, date, description, organiz
                 <p><strong>Sudionici:</strong></p>
                 <ol>
                     {participants.map(participant => (
-                    <li key={participant.id}>{participant.name}</li>
+                        <li key={participant.id}>
+                            {participant.name}
+                            {isAdmin && (
+                                <RiDeleteBinLine onClick={() => handleDeleteParticipant(participant.id)} className="deleteIcon" />
+                            )}
+                        </li>
                     ))}
                 </ol>
+
                 {!showForm && (
                     <button onClick={() => setShowForm(true)}>Prijavi se</button>
                 )}

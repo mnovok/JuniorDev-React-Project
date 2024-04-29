@@ -142,4 +142,27 @@ label {
 
 .popupContent {
     position: relative;
-  }
+}
+
+.deleteIcon {
+    cursor: pointer;
+    color: #F00000; 
+    margin-left: 5px; 
+    font-size: 20px;
+}
+
+.deleteIcon:hover {
+    font-weight: bolder;
+    color: #C70000;
+}
+
+.deleteActivityContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deleteIcon.deleteActivity {
+    margin-left: auto;
+    padding-bottom: 10px;
+}

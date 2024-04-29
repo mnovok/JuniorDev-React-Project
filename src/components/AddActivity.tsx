@@ -1,6 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import '../styles/activity.css';
 
+interface Participant {
+  id: string;
+  name: string;
+}
+
 interface ActivityFormData {
     name: string;
     date: string;
@@ -9,7 +14,8 @@ interface ActivityFormData {
     location: string;
     time: string;
     image: string;
-    participants: string[];
+    participants: Participant[];
+    isAdmin: boolean;
 }
   
   interface AddActivityFormProps {
@@ -27,6 +33,7 @@ const AddActivity = ({ onClose, onSubmit }: AddActivityFormProps) => {
     time: '',
     image: '',
     participants: [],
+    isAdmin: false,
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
