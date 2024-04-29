@@ -109,5 +109,96 @@
         }
       ]
     }
+  ],
+  "cities": 
+  [
+    "Split",
+    "Omiš",
+    "Trogir",
+    "Solin",
+    "Trilj",
+    "Sinj"
+  ],
+  "occupations": 
+  [
+    "Ekologija",
+    "Edukacija",
+    "Prijevoz",
+    "Razno"
+  ],
+  "volunteers":
+  [
+    {
+      "id": "1",
+      "name": "Janica Jolić",
+      "contact": "jjolic10@gmail.com",
+      "city": "Sinj",
+      "occupation": ["Prijevoz", "Razno"],
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "2",
+      "name": "Marko Mihaljević",
+      "contact": "marko1979@yahoo.com",
+      "city": "Split",
+      "occupation": ["Edukacija"],
+      "image": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "3",
+      "name": "Ana Strinić",
+      "contact": "ana.ss88@hotmail.com",
+      "city": "Omiš",
+      "occupation": ["Ekologija", "Razno"],
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "4",
+      "name": "Ivan Marković",
+      "contact": "ivan.m@gmail.com",
+      "city": "Trogir",
+      "occupation": ["Edukacija", "Prijevoz"],
+      "image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "5",
+      "name": "Marija Novak",
+      "contact": "marija.novak7@gmail.com",
+      "city": "Solin",
+      "occupation": ["Prijevoz"],
+      "image": "https://images.unsplash.com/photo-1516641025997-deb645062c15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "6",
+      "name": "Josip Bilić",
+      "contact": "josip.bilic9@outlook.com",
+      "city": "Trilj",
+      "occupation": ["Razno"],
+      "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "7",
+      "name": "Ivana Karadža",
+      "contact": "ivana.karadza@yahoo.com",
+      "city": "Sinj",
+      "occupation": ["Edukacija"],
+      "image": "https://images.unsplash.com/photo-1553514029-1318c9127859?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "8",
+      "name": "Stipe Ivanović",
+      "contact": "stipe.stipic@gmail.com",
+      "city": "Split",
+      "occupation": ["Ekologija", "Prijevoz"],
+      "image": "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "9",
+      "name": "Lucija Vrdoljak",
+      "contact": "lucija.lucic@hotmail.com",
+      "city": "Omiš",
+      "occupation": ["Razno"],
+      "image": "https://images.unsplash.com/photo-1565697451991-9c2bd0524fd2?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
   ]
 }

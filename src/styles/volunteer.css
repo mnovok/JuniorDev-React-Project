@@ -1,0 +1,117 @@
+#title {
+    letter-spacing: 3px;
+    margin-top: 105px;
+    margin-bottom: 20px;
+}
+
+.volunteer {
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+.volunteerImageContainer {
+    position: relative;
+}
+  
+.volunteerImage {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.volunteerName {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 0 0 5px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    letter-spacing: 3px;
+}
+  
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+  
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+  
+.modal.show {
+    display: block;
+}
+  
+.modalImage {
+    width: 100%;
+    height: 50vh;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+  
+button {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    align-self: center;
+  }
+  
+button:hover {
+    background-color: #0056b3;
+}
+
+.volunteerWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+}
+
+.volunteerContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.filterWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex: 0 0 20%;
+}
+
+.selectWrapper {
+    margin-bottom: 10px;
+  }
+  
+  .selectWrapper select {
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .checkboxWrapper {
+    margin-bottom: 10px;
+  }
