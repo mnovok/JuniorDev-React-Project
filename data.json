@@ -110,21 +110,19 @@
       ]
     }
   ],
-  "cities": 
-  [
-    "Split",
-    "Omiš",
-    "Trogir",
-    "Solin",
-    "Trilj",
-    "Sinj"
+  "cities": [
+    { "id": "1", "name": "Split" },
+    { "id": "2", "name": "Omiš" },
+    { "id": "3", "name": "Trogir" },
+    { "id": "4", "name": "Solin" },
+    { "id": "5", "name": "Trilj" },
+    { "id": "6", "name": "Sinj" }
   ],
-  "occupations": 
-  [
-    "Ekologija",
-    "Edukacija",
-    "Prijevoz",
-    "Razno"
+  "occupations": [
+    { "id": "1", "name": "Ekologija" },
+    { "id": "2", "name": "Edukacija" },
+    { "id": "3", "name": "Prijevoz" },
+    { "id": "4", "name": "Razno" }
   ],
   "volunteers":
   [

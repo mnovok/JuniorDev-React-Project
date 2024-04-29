@@ -21,6 +21,7 @@ const Volonteri: React.FC = () => {
   const [occupations, setOccupations] = useState<string[]>([]);
   const [selectedCity, setSelectedCity] = useState<string>('');
   const [selectedOccupations, setSelectedOccupations] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const fetchVolunteers = () => {
     axios.get('http://localhost:3001/volunteers')
@@ -52,37 +53,47 @@ const Volonteri: React.FC = () => {
     });
   };
 
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
   const resetFilters = () => {
     setSelectedCity('');
     setSelectedOccupations([]);
+    setSearchQuery('');
   };
 
   useEffect(() => {
     axios.get('http://localhost:3001/cities/')
     .then(res => {
-      setCities(res.data);
-    });
+      setCities(res.data.map((city: { name: string }) => city.name));
+    })
     axios.get('http://localhost:3001/occupations')
     .then(res => {
-      setOccupations(res.data);
-    });
+      setOccupations(res.data.map((occupation: { name: string }) => occupation.name));
+    })
     fetchVolunteers();
   }, []);
 
   useEffect(() => {
     let filtered = volunteers;
+
     if (selectedCity) {
       filtered = filtered.filter(volunteer => volunteer.city === selectedCity);
     }
     if (selectedOccupations.length > 0) {
       filtered = filtered.filter(volunteer => volunteer.occupation.some(occupation => selectedOccupations.includes(occupation)));
     }
+    if (searchQuery) {
+      filtered = filtered.filter(volunteer => volunteer.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
     setFilteredVolunteers(filtered);
-  }, [selectedCity, selectedOccupations, volunteers]);
+  }, [selectedCity, selectedOccupations, searchQuery, volunteers]);
 
   return (
     <div className="main">
       <h3 id='title'>Popis volontera županije</h3>
+      <input type="text" id="search" value={searchQuery} onChange={handleSearchChange} placeholder='Traži...'/>
       <div className='volunteerWrapper'>
         <div className="filterWrapper">
           <h4>Filter</h4>
