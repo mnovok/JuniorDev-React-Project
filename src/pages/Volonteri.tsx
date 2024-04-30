@@ -3,14 +3,15 @@ import '../styles/volunteer.css';
 import axios from 'axios';
 import { useUserRole } from '../components/UserRoleContext';
 import Volunteer from '../components/Volunteer';
+import AddVolunteer from '../components/AddVolunteer';
 
 interface VolunteerData {
-  id: string;
   name: string;
   contact: string;
   city: string;
   occupation: string[];
   image: string;
+  isAdmin: boolean;
 }
 
 const Volonteri: React.FC = () => {
@@ -22,6 +23,7 @@ const Volonteri: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('');
   const [selectedOccupations, setSelectedOccupations] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [showAddVolunteerModal, setShowAddVolunteerModal] = useState<Boolean>(false);
 
   const fetchVolunteers = () => {
     axios.get('http://localhost:3001/volunteers')
@@ -90,9 +92,31 @@ const Volonteri: React.FC = () => {
     setFilteredVolunteers(filtered);
   }, [selectedCity, selectedOccupations, searchQuery, volunteers]);
 
+  const handleToggleModal = () => {
+    setShowAddVolunteerModal(!showAddVolunteerModal);
+  };
+
+  const handleSubmitVolunteer = (formData: VolunteerData) => {
+    axios.post(`http://localhost:3001/volunteers/`, formData)
+      .then(response => {
+        console.log('Activity added successfully:', response.data);
+        fetchVolunteers();
+      })
+      .catch(error => {
+        console.error('Error adding volunteer:', error);
+      });
+  };
+
   return (
     <div className="main">
       <h3 id='title'>Popis volontera županije</h3>
+
+      {role === 'admin' && (
+        <button className='addVolunteerBtn' onClick={handleToggleModal}>Dodaj volontera</button>
+      )}
+
+      {showAddVolunteerModal && <AddVolunteer onClose={handleToggleModal} onSubmit={handleSubmitVolunteer} cities={cities} occupations={occupations}/>}   
+
       <input type="text" id="search" value={searchQuery} onChange={handleSearchChange} placeholder='Traži...'/>
       <div className='volunteerWrapper'>
         <div className="filterWrapper">
@@ -121,11 +145,13 @@ const Volonteri: React.FC = () => {
           {filteredVolunteers.map(volunteer => (
             <Volunteer
               key={volunteer.id}
+              id={volunteer.id}
               name={volunteer.name}
               contact={volunteer.contact}
               city={volunteer.city}
               occupation={volunteer.occupation}
               image={volunteer.image}
+              isAdmin={role === 'admin'}
               onUpdateVolunteer={handleUpdateVolunteers}
             />
           ))}

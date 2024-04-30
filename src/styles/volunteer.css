@@ -129,7 +129,7 @@ button:hover {
   margin-bottom: 10px; 
 }
 
-.filterWrapper input[type="checkbox"] {
+.filterWrapper input[type="checkbox"], .formWrapperPopupAdd input[type="checkbox"]{
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -144,12 +144,12 @@ button:hover {
     transition: border-color 0.3s ease;
 }
 
-.filterWrapper input[type="checkbox"]:hover {
+.filterWrapper input[type="checkbox"]:hover, .formWrapperPopupAdd input[type="checkbox"]:hover {
     font-weight: bolder;
     border: 2px solid red;
 }
 
-.filterWrapper input[type="checkbox"]:checked {
+.filterWrapper input[type="checkbox"]:checked, .formWrapperPopupAdd input[type="checkbox"]:checked {
     background-color: #0056b3;
     border: 2px solid #007bff;
 }
@@ -164,6 +164,111 @@ button:hover {
     border: 1px solid #ccc; 
     border-radius: 5px; 
     background-color: #f4f9f9;
+    color: #333;
+}
+
+.addVolunteerBtn {
+    margin-bottom: 10px;
+}
+
+.modalAdd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.modalContentAdd {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.close:hover {
+    font-weight: bold;
+}
+
+.formWrapperPopupAdd input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f9f9;
+    color: #333;
+}
+
+.formWrapperPopupAdd button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formWrapperPopupAdd button:hover {
+    background-color: #0056b3;
+}
+
+.checkboxWrapperAdd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.checkboxWrapperAdd label {
+    margin-right: 20px;
+    font-size: medium;
+}
+
+.checkboxWrapperAdd input[type="checkbox"] {
+    vertical-align: -20px;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    color: #F00000; 
+    margin-left: 5px; 
+    font-size: 20px;
+}
+
+.deleteIcon:hover {
+    font-weight: bolder;
+    color: #C70000;
+}
+
+.deleteEditContainer {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+}
+  
+.editIcon {
+    cursor: pointer;
+    color: #555; 
+    margin-left: 5px; 
+    font-size: 20px;
+}
+
+.editIcon:hover {
+    font-weight: bolder;
     color: #333;
 }
 

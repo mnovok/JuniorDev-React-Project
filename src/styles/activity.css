@@ -50,6 +50,10 @@
     display: block; 
 }
 
+.popupContent h2 {
+    padding-bottom: 40px;
+}
+
 button {
     background-color: #007bff; 
     color: #fff; 
@@ -104,8 +108,8 @@ button:hover {
   
 .close {
     position: absolute;
-    top: -45px;
-    right: 10px;
+    /* top: 100px;
+    right: 10px; */
     cursor: pointer;
     font-size: xx-large;
 }
@@ -132,7 +136,7 @@ label {
 }
   
 .formWrapperPopup input {
-    width: 50%; 
+    width: 80%; 
     padding: 10px; 
     margin-bottom: 15px;
     border: 1px solid #ccc; 

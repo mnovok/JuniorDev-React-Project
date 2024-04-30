@@ -41,7 +41,6 @@ const Aktivnosti: React.FC = () => {
         console.error('Error adding activity:', error);
       });
   };
-  
 
   const fetchActivities = () => {
     axios.get('http://localhost:3001/activities')
