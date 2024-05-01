@@ -10,7 +10,7 @@ interface VolunteerFormData {
     isAdmin: boolean;
 }
   
-  interface AddVolunteerFormProps {
+interface AddVolunteerFormProps {
     onClose: () => void;
     onSubmit: (formData: VolunteerFormData) => void;
     cities: string[];

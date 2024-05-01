@@ -1,0 +1,64 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sortWrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-bottom: 20px;
+}
+
+.sortWrapper button {
+    margin-right: 20px; 
+    margin-bottom: 10px;
+}
+
+.associationsWrapper {
+    max-width: 1500px;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+}
+
+.association {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 700px;
+}
+  
+.association h3 {
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+  
+.association p {
+    margin: 0;
+    letter-spacing: 2px;
+}
+  
+.association:last-child {
+    margin-bottom: 20px;
+}
+
+.sortBtn {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .association {
+        width: 100%;
+    }
+}
