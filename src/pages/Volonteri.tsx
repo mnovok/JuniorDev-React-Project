@@ -153,6 +153,8 @@ const Volonteri: React.FC = () => {
               image={volunteer.image}
               isAdmin={role === 'admin'}
               onUpdateVolunteer={handleUpdateVolunteers}
+              cities={cities}
+              occupations={occupations}
             />
           ))}
         </div>

@@ -1,6 +1,6 @@
 .backgroundImage {
     position: relative;
-    height: 100vh; 
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/85/c9/7e/caption.jpg?w=1200&h=-1&s=1);
     background-size: cover;
@@ -77,18 +77,64 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .homeWrapper {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .homeWrapper h1 {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+    
+    .homeWrapper h3 {
+        letter-spacing: 4px;
+        font-weight: 400;
+        font-size: large; 
+    }
+    
     .aboutWrapper {
-      flex-direction: column; 
-      align-items: stretch; 
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
     }
-  
-    .aboutImage {
-      margin-right: 100px; 
+    
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: large; 
+        margin-top: 20px; 
     }
-  
+    
     .aboutText {
-      text-align: left; 
-      margin-top: 20px; 
-      margin-right: 0;
+        text-align: center; 
+        letter-spacing: 2px;
+        line-height: 1.5;
+        margin: 20px 0; 
+        max-width: 80%;
+    }
+    
+    .aboutImage {
+        text-align: center; 
+        margin: 20px 0; 
+    }
+    
+    .aboutImage img {
+        max-width: 100%; 
+        height: auto;
+        border-radius: 5px;
+    }
+    
+    .formWrapper {
+        text-align: center;
+        margin-top: 20px; 
+    }
+    
+    .formText {
+        text-align: center;
+        margin-top: 20px;
     }
 }

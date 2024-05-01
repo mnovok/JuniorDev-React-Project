@@ -89,7 +89,6 @@ const AddVolunteer = ({ onClose, onSubmit, cities, occupations }: AddVolunteerFo
                             value={occupation}
                             checked={formData.occupation.includes(occupation)}
                             onChange={handleCheckboxChange}
-                            required
                         />
                         {occupation}
                         </label>

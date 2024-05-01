@@ -272,6 +272,71 @@ button:hover {
     color: #333;
 }
 
+.saveBtn {
+    margin: 10px;
+}
+
+.volunteer input {
+    width: 50%; 
+    padding: 10px; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f4f9f9;
+    color: #333;
+}
+
+.filterWrapper select {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f4f9f9;
+    color: #333;
+}
+
+.volunteer select {
+    width: 30%; 
+    padding: 10px; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f4f9f9;
+    color: #333;
+}
+
+.volunteer input[type="checkbox"]{
+    width: 1px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f4f9f9;
+    color: #333;
+    vertical-align: -10px;
+}
+
+.checkboxWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.checkboxWrapper label {
+    margin-right: 10px;
+    font-size: medium;
+}
+
+.checkboxWrapper input:checked {
+    background-color: #0056b3;
+    border: 2px solid #007bff;
+}
+
+.checkboxWrapper input:hover {
+    font-weight: bolder;
+    border: 2px solid red;
+}
+
 @media (max-width: 1200px) {
     .volunteerWrapper {
       flex-direction: column;

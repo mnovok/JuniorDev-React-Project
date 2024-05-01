@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm';
 
 const Pocetna: React.FC = () => {
   return (
-    <div>
+    <div className='home'>
         <div className="backgroundImage">
             <div className='homeWrapper'>
                 <img src='srceJadrana.png' height={150} width={150} alt="Background"></img>
