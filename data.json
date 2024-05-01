@@ -59,7 +59,12 @@
       "date": "15.06.2024.",
       "time": "10:00 - 12:00",
       "image": "https://lugia-boats.com/wp-content/uploads/2023/08/wyspa-ciovo.jpeg",
-      "participants": []
+      "participants": [
+        {
+          "id": "0.6656988248533622",
+          "name": "Ivan Mihaljević"
+        }
+      ]
     },
     {
       "id": "4",
@@ -180,7 +185,7 @@
         "Ekologija",
         "Razno"
       ],
-      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "4",
@@ -201,7 +206,7 @@
       "occupation": [
         "Prijevoz"
       ],
-      "image": "https://images.unsplash.com/photo-1516641025997-deb645062c15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1485290334039-a3c69043e517?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "6",
@@ -221,7 +226,7 @@
       "occupation": [
         "Edukacija"
       ],
-      "image": "https://images.unsplash.com/photo-1553514029-1318c9127859?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1485893086445-ed75865251e0?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "8",
@@ -240,9 +245,10 @@
       "contact": "lucija.lucic@hotmail.com",
       "city": "Omiš",
       "occupation": [
-        "Razno"
+        "Razno",
+        "Edukacija"
       ],
-      "image": "https://images.unsplash.com/photo-1565697451991-9c2bd0524fd2?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
 }

@@ -65,7 +65,7 @@ const Volunteer: React.FC<VolunteerProps> = ({id, name, contact, city, occupatio
         } else {
             setEditedValues(prevState => ({
                 ...prevState,
-                [name]: prevState[name as keyof typeof editedValues].filter((val: string) => val !== value),
+                [name]: (prevState[name as keyof typeof editedValues] as string[]).filter((val: string) => val !== value),
             }));
         }
     };
