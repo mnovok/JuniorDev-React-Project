@@ -77,7 +77,7 @@ const Volunteer: React.FC<VolunteerProps> = ({id, name, contact, city, occupatio
 
     const handleSaveEditing = (volunteerId: string) => {
         axios.patch(`http://localhost:3001/volunteers/${volunteerId}`, editedValues)
-            .then(res => {
+            .then(() => {
                 onUpdateVolunteer();})
             .catch(error => {
                 console.error("Error updating volunteer:", error);

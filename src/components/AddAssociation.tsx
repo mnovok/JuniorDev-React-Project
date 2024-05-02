@@ -1,7 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import '../styles/volunteer.css';
 
 interface AssociationFormData {
+    id: string;
     name: string;
     address: string;
     city: string;
@@ -10,13 +11,15 @@ interface AssociationFormData {
 }
   
 interface AddAssociationFormProps {
+    id: string;
     onClose: () => void;
     onSubmit: (formData: AssociationFormData) => void;
     cities: string[];
 }
 
-const AddAssociation = ({ onClose, onSubmit, cities }: AddAssociationFormProps) => {
+const AddAssociation = ({  id, onClose, onSubmit, cities }: AddAssociationFormProps) => {
   const [formData, setFormData] = useState<AssociationFormData>({
+    id: id,
     name: '',
     address: '',
     city: '',

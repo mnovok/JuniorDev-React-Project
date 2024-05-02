@@ -6,6 +6,7 @@ import Volunteer from '../components/Volunteer';
 import AddVolunteer from '../components/AddVolunteer';
 
 interface VolunteerData {
+  id: string;
   name: string;
   contact: string;
   city: string;
@@ -107,6 +108,16 @@ const Volonteri: React.FC = () => {
       });
   };
 
+  const generateRandomId = (length: number): string => {
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let randomId = '';
+    for (let i = 0; i < length; i++) {
+      randomId += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return randomId;
+  };
+
   return (
     <div className="main">
       <h3 id='title'>Popis volontera županije</h3>
@@ -115,7 +126,7 @@ const Volonteri: React.FC = () => {
         <button className='addVolunteerBtn' onClick={handleToggleModal}>Dodaj volontera</button>
       )}
 
-      {showAddVolunteerModal && <AddVolunteer onClose={handleToggleModal} onSubmit={handleSubmitVolunteer} cities={cities} occupations={occupations}/>}   
+      {showAddVolunteerModal && <AddVolunteer id={generateRandomId(4)} onClose={handleToggleModal} onSubmit={handleSubmitVolunteer} cities={cities} occupations={occupations}/>}   
 
       <input type="text" id="search" value={searchQuery} onChange={handleSearchChange} placeholder='Traži...'/>
       <div className='volunteerWrapper'>

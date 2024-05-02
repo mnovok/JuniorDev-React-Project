@@ -37,11 +37,8 @@ const Activity: React.FC<ActivityProps> = ({id, name, date, description, organiz
             const updatedParticipants = [...participants, newParticipant];
     
             await axios.patch(`http://localhost:3001/activities/${id}`, { participants: updatedParticipants })
-            .then(res => {
-                axios.get(`http://localhost:3001/activities/`)
-                // window.location.reload();
-                onDeleteParticipant();
-            });
+    
+            onDeleteParticipant();
             alert('Uspješno prijavljeni!');
             setParticipantName('');
             setShowForm(false);
@@ -71,7 +68,7 @@ const Activity: React.FC<ActivityProps> = ({id, name, date, description, organiz
             return; 
         }
         try {
-            await axios.delete(`http://localhost:3001/activities/${id}`);
+            await axios.delete(`http://localhost:3001/activities/${activityId}`);
             onDeleteParticipant();
             alert('Aktivnost uspješno izbrisana!');
         } catch (error) {

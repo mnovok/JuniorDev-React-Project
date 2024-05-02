@@ -1,7 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import '../styles/volunteer.css';
 
 interface VolunteerFormData {
+    id: string;
     name: string;
     contact: string;
     city: string;
@@ -11,14 +12,16 @@ interface VolunteerFormData {
 }
   
 interface AddVolunteerFormProps {
+    id: string;
     onClose: () => void;
     onSubmit: (formData: VolunteerFormData) => void;
     cities: string[];
     occupations: string[];
 }
 
-const AddVolunteer = ({ onClose, onSubmit, cities, occupations }: AddVolunteerFormProps) => {
+const AddVolunteer = ({ id, onClose, onSubmit, cities, occupations }: AddVolunteerFormProps) => {
   const [formData, setFormData] = useState<VolunteerFormData>({
+    id: id,
     name: '',
     contact: '',
     city: '',

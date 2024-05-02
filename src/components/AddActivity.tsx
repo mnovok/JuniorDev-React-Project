@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import '../styles/activity.css';
 
 interface Participant {
@@ -7,6 +7,7 @@ interface Participant {
 }
 
 interface ActivityFormData {
+    id: string;
     name: string;
     date: string;
     description: string;
@@ -19,12 +20,14 @@ interface ActivityFormData {
 }
   
   interface AddActivityFormProps {
+    id: string;
     onClose: () => void;
     onSubmit: (formData: ActivityFormData) => void;
 }
 
-const AddActivity = ({ onClose, onSubmit }: AddActivityFormProps) => {
+const AddActivity = ({ id, onClose, onSubmit }: AddActivityFormProps) => {
   const [formData, setFormData] = useState({
+    id: id,
     name: '',
     date: '',
     description: '',

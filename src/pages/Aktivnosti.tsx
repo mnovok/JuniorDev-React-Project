@@ -11,6 +11,7 @@ interface Participant {
 }
 
 interface ActivityFormData {
+  id: string;
   name: string;
   date: string;
   description: string;
@@ -60,6 +61,16 @@ const Aktivnosti: React.FC = () => {
     fetchActivities(); //inicijalni dohvat podataka
   }, []);
 
+  const generateRandomId = (length: number): string => {
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let randomId = '';
+    for (let i = 0; i < length; i++) {
+      randomId += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return randomId;
+  };
+
   return (
     <div className='activityWrapper'>
       <h3>Prati i prijavi se na buduće aktivnosti</h3>
@@ -68,7 +79,7 @@ const Aktivnosti: React.FC = () => {
         <button className='addActivityBtn' onClick={handleAddButton}>Dodaj aktivnost</button>
       )}
 
-      {showAddActivityPopup && <AddActivity onClose={() => setShowAddActivityPopup(false)} onSubmit={handleSubmitActivity} />}    
+      {showAddActivityPopup && <AddActivity id={generateRandomId(4)} onClose={() => setShowAddActivityPopup(false)} onSubmit={handleSubmitActivity} />}    
 
       <div className="activities">
         {activities.map(activity => (

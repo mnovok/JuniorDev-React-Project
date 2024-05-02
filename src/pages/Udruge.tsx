@@ -6,6 +6,7 @@ import Association from '../components/Association';
 import AddAssociation from '../components/AddAssociation';
 
 interface AssociationProps {
+  id: string;
   name: string;
   address: string;
   city: string;
@@ -18,7 +19,6 @@ const Udruge: React.FC = () => {
   const [sortedAssociations, setSortedAssociations] = useState<AssociationProps[]>([]);
   const { role } = useUserRole();
   const [cities, setCities] = useState<string[]>([]);
-  const [selectedCity, setSelectedCity] = useState<string>('');
   const [showAddAssociationModal, setShowAddAssociationModal] = useState<Boolean>(false);
 
   const fetchAssociations = () => {
@@ -53,7 +53,6 @@ const Udruge: React.FC = () => {
   
   const resetFilter = () => {
     setSortedAssociations(associations);
-    setSelectedCity('');
   };
 
   const handleToggleModal = () => {
@@ -79,12 +78,22 @@ const Udruge: React.FC = () => {
     fetchAssociations();
   }, []);
 
+  const generateRandomId = (length: number): string => {
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let randomId = '';
+    for (let i = 0; i < length; i++) {
+      randomId += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return randomId;
+  };
+
 
   return (
     <div className='main'>
     <h3 className='title'>Popis udruga</h3>
     <button onClick={handleToggleModal}>Dodaj udrugu</button>
-    {showAddAssociationModal && <AddAssociation onClose={handleToggleModal} onSubmit={handleSubmitAssociation} cities={cities}/>}
+    {showAddAssociationModal && <AddAssociation id={generateRandomId(4)} onClose={handleToggleModal} onSubmit={handleSubmitAssociation} cities={cities}/>}
     <h4>Sortiranje</h4>
     
       <div className='sortWrapper'>
