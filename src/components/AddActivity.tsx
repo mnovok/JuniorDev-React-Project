@@ -53,9 +53,9 @@ const AddActivity = ({ onClose, onSubmit }: AddActivityFormProps) => {
 
   return (
     <div className="popupOverlay">
+          <span className="closed" onClick={onClose}>&times;</span>
     <div className="popup">
       <div className="popupContent">
-        <span className="close" onClick={onClose}>&times;</span>
         <h2>Dodavanje nove aktivnosti</h2>
         <div className="formWrapperPopup">
             <form onSubmit={handleSubmit}>

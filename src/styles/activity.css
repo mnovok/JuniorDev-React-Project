@@ -97,6 +97,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
   
 .popup {
@@ -108,10 +109,10 @@ button:hover {
   
 .close {
     position: absolute;
-    /* top: 100px;
-    right: 10px; */
+    top: 1000px;
+    right: 10px;
     cursor: pointer;
-    font-size: xx-large;
+    font-size: 24px;
 }
 
 .close:hover {

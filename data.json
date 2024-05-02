@@ -2,9 +2,9 @@
   "messages": [
     {
       "id": "1",
-      "name": "Marija Novokmet",
+      "name": "Marija Horvat",
       "email": "mnovok@yahoo.com",
-      "message": "I love this page!"
+      "message": "Super dizajn!!"
     },
     {
       "id": "5a6d",
@@ -47,6 +47,14 @@
         {
           "id": "0.12710975782827982",
           "name": "Marija Marić"
+        },
+        {
+          "id": "0.19464163278704305",
+          "name": "Stipe Ivanović"
+        },
+        {
+          "id": "0.8912560138835317",
+          "name": "Ana Strinić"
         }
       ]
     },
@@ -164,7 +172,7 @@
         "Prijevoz",
         "Razno"
       ],
-      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "2",
@@ -251,8 +259,7 @@
       "image": "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
-  "associations":
-  [
+  "associations": [
     {
       "id": "1",
       "name": "Ruke Dobrote",
@@ -287,6 +294,22 @@
       "address": "Ulica Ante Starčevića",
       "city": "Trilj",
       "status": "pending"
+    },
+    {
+      "id": "eed9",
+      "name": "Pčelica Maja",
+      "address": "Domovinskog rata 7",
+      "city": "Split",
+      "status": "approved",
+      "isAdmin": false
+    },
+    {
+      "id": "f1bc",
+      "name": "Udruga Svjetlost",
+      "address": "Ulica Ivana Mažuranića ",
+      "city": "Sinj",
+      "status": "pending",
+      "isAdmin": false
     }
   ]
 }

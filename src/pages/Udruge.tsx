@@ -3,13 +3,13 @@ import '../styles/associations.css';
 import { useUserRole } from '../components/UserRoleContext';
 import axios from 'axios';
 import Association from '../components/Association';
+import AddAssociation from '../components/AddAssociation';
 
 interface AssociationProps {
-  id: string;
   name: string;
   address: string;
   city: string;
-  status: string[];
+  status: string;
   isAdmin: boolean;
 }
 
@@ -19,6 +19,7 @@ const Udruge: React.FC = () => {
   const { role } = useUserRole();
   const [cities, setCities] = useState<string[]>([]);
   const [selectedCity, setSelectedCity] = useState<string>('');
+  const [showAddAssociationModal, setShowAddAssociationModal] = useState<Boolean>(false);
 
   const fetchAssociations = () => {
     axios.get('http://localhost:3001/associations')
@@ -31,9 +32,14 @@ const Udruge: React.FC = () => {
       });
   };
 
-  const handleUpdateAssociations = () => {
-    fetchAssociations();
-  }
+  const handleUpdateAssociations = async (associationId: string, newStatus: string) => {
+    try {
+        await axios.patch(`http://localhost:3001/associations/${associationId}`, { status: newStatus });
+        fetchAssociations(); 
+    } catch (error) {
+        console.error('Error updating association:', error);
+    }
+  };
 
   const sortAssociationsByCity = () => {
     const sorted = [...associations].sort((a, b) => a.city.localeCompare(b.city));
@@ -50,6 +56,21 @@ const Udruge: React.FC = () => {
     setSelectedCity('');
   };
 
+  const handleToggleModal = () => {
+    setShowAddAssociationModal(!showAddAssociationModal);
+  };
+
+  const handleSubmitAssociation = (formData: AssociationProps) => {
+    axios.post(`http://localhost:3001/associations/`, formData)
+      .then(response => {
+        console.log('Association added successfully:', response.data);
+        fetchAssociations();
+      })
+      .catch(error => {
+        console.error('Error adding association:', error);
+      });
+  };
+
   useEffect(() => {
     axios.get('http://localhost:3001/cities/')
     .then(res => {
@@ -61,8 +82,9 @@ const Udruge: React.FC = () => {
 
   return (
     <div className='main'>
-    <h3 id='title'>Popis udruga</h3>
-    <button>Dodaj udrugu</button>
+    <h3 className='title'>Popis udruga</h3>
+    <button onClick={handleToggleModal}>Dodaj udrugu</button>
+    {showAddAssociationModal && <AddAssociation onClose={handleToggleModal} onSubmit={handleSubmitAssociation} cities={cities}/>}
     <h4>Sortiranje</h4>
     
       <div className='sortWrapper'>
@@ -83,13 +105,13 @@ const Udruge: React.FC = () => {
               city={association.city}
               status={association.status}
               isAdmin={role === 'admin'}
-              onUpdateAssociation={fetchAssociations}
+              onUpdateAssociation={handleUpdateAssociations}
               cities={cities}
             />
           ))}
           {role === 'admin' && (
-            <>
-              <h3>Zahtjevi za odobrenje</h3>
+            <div className='pendingAssociations'>
+              <h3 className='titleSecond'>Zahtjevi za odobrenje</h3>
               {sortedAssociations
                 .filter(association => association.status.includes('pending'))
                 .map(association => (
@@ -101,11 +123,11 @@ const Udruge: React.FC = () => {
                     city={association.city}
                     status={association.status}
                     isAdmin={role === 'admin'}
-                    onUpdateAssociation={fetchAssociations}
+                    onUpdateAssociation={handleUpdateAssociations}
                     cities={cities}
                   />
                 ))}
-            </>
+            </div>
           )}
       </div>
     </div>

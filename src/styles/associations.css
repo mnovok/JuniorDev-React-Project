@@ -57,6 +57,57 @@
     align-self: center;
 }
 
+.association h3 {
+    color: #0f72d5;
+}
+
+.title {
+    letter-spacing: 3px;
+    margin-top: 105px;
+    margin-bottom: 20px;
+}
+
+.titleSecond {
+    letter-spacing: 3px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.pendingAssociations .association h3 {
+    color: #C70000;
+}
+
+.approvalButtonsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.approvalBtn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.approvalBtn:hover {
+    font-weight: bolder;
+}
+
+.accept {
+    color: rgb(0, 197, 49);
+}
+
+.accept:hover {
+    color: rgb(0, 158, 40)
+}
+
+.cancel {
+    color: #F00000;
+}
+
+.cancel:hover {
+    color: #C70000;
+}
+
 @media (max-width: 768px) {
     .association {
         width: 100%;
