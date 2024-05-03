@@ -32,12 +32,14 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .homeWrapper h3 {
     letter-spacing: 4px;
     font-weight: 400;
     font-size: x-large;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .aboutWrapper {
@@ -57,16 +59,16 @@ h2 {
 .aboutText {
     flex: 1;
     text-align: left;
-    letter-spacing: 2px;
-    line-height: 35px;
+    letter-spacing: 3px;
+    line-height: 40px;
     margin-left: 80px;
-    max-width: 600px;
+    font-size: larger;
 }
 
 .aboutImage {
     flex: 1;
     text-align: right;
-    max-width: 600px;
+    /* max-width: 600px; */
     margin-right: 80px;
 }
 
@@ -75,6 +77,11 @@ h2 {
     height: auto;
     border-radius: 5px;
 }
+
+.aboutImage img:hover {
+    transform: scale(1.1);
+}
+
 
 @media (max-width: 768px) {
     .homeWrapper {
@@ -136,5 +143,12 @@ h2 {
     .formText {
         text-align: center;
         margin-top: 20px;
+    }
+}
+
+@media (min-width: 1601px) {
+    .logoImage {
+        width: 300px; 
+        height: 300px;
     }
 }

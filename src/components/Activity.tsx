@@ -106,7 +106,7 @@ const Activity: React.FC<ActivityProps> = ({id, name, date, description, organiz
                 </ol>
 
                 {!showForm && (
-                    <button onClick={() => setShowForm(true)}>Prijavi se</button>
+                    <button onClick={() => setShowForm(true)} className='joinBtn'>Prijavi se</button>
                 )}
                 {showForm && (
                     <form onSubmit={handleFormSubmit} className="popup-form">

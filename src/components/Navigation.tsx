@@ -5,7 +5,7 @@ import '../styles/navigation.css';
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 700);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1200);
   const { role, toggleRole } = useUserRole();
 
   const toggleMobileMenu = () => {
@@ -14,7 +14,7 @@ const Navigation: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth < 700);
+      setIsMobileView(window.innerWidth < 1200);
     };
 
     window.addEventListener('resize', handleResize);

@@ -72,6 +72,8 @@
 .adminLabel {
     color: #f4ebeb; 
     font-weight: lighter;
+    font-size: larger;
+    letter-spacing: 2px;
 }
 
 .adminCheckbox label {
@@ -102,7 +104,7 @@ input[type="checkbox"]:checked {
     background-color: #f4ebeb; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .navigationBar {
       justify-content: space-between;
     }
@@ -121,7 +123,7 @@ input[type="checkbox"]:checked {
       flex-direction: column;
       align-items: center;
       position: absolute;
-      top: 60px;
+      top: 75px;
       left: 0;
       width: 100%;
       background-color: #2E68F4;
@@ -129,6 +131,7 @@ input[type="checkbox"]:checked {
       transition: opacity 0.3s ease;
       opacity: 0;
       pointer-events: none;
+      margin-top: auto;
     }
   
     .mobileMenuOpen .mobileMenu {
@@ -144,5 +147,11 @@ input[type="checkbox"]:checked {
     .navigationLinks li {
       margin-right: 0;
       margin-bottom: 10px;
+    }
+
+    .adminCheckbox {
+        margin-top: 20px;
+        padding: 20px;
+        position: relative;
     }
   }

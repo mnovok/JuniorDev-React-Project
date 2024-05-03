@@ -115,6 +115,7 @@ const Udruge: React.FC = () => {
               status={association.status}
               isAdmin={role === 'admin'}
               onUpdateAssociation={handleUpdateAssociations}
+              onDeleteAssociation={fetchAssociations}
               cities={cities}
             />
           ))}
@@ -133,6 +134,7 @@ const Udruge: React.FC = () => {
                     status={association.status}
                     isAdmin={role === 'admin'}
                     onUpdateAssociation={handleUpdateAssociations}
+                    onDeleteAssociation={fetchAssociations}
                     cities={cities}
                   />
                 ))}

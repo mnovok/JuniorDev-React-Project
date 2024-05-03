@@ -58,6 +58,7 @@ button {
     background-color: #007bff; 
     color: #fff; 
     padding: 10px 20px; 
+    letter-spacing: 1px;
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
@@ -84,6 +85,7 @@ button:hover {
 
 .addActivityBtn {
     margin-bottom: 15px;
+    padding: 10px 20px; 
 }
 
 .popupOverlay {
@@ -126,7 +128,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    width: 60vw;
+    width: 40vw;
     height: 50vh;
 }
 
@@ -154,7 +156,7 @@ label {
     cursor: pointer;
     color: #F00000; 
     margin-left: 5px; 
-    font-size: 20px;
+    font-size: large;
 }
 
 .deleteIcon:hover {
@@ -176,7 +178,18 @@ label {
 .closed {
     position: absolute;
     top: 80px;
-    right: 300px;
+    right: 450px;
     cursor: pointer;
     font-size: 24px;
+}
+
+.joinBtn {
+    padding: 15px 30px;
+    font-size: medium;
+    margin-bottom: 15px;
+}
+
+.details p, li {
+    font-size: medium;
+    letter-spacing: 1px;
 }

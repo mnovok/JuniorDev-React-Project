@@ -7,7 +7,7 @@ const Pocetna: React.FC = () => {
     <div className='home'>
         <div className="backgroundImage">
             <div className='homeWrapper'>
-                <img src='srceJadrana.png' height={150} width={150} alt="Background"></img>
+                <img src='srceJadrana.png' height={150} width={150} alt="Background" className='logoImage'></img>
                 <h1>Srce Jadrana</h1>
                 <h3>Za zajednicu, za ljude, za srce.</h3>
             </div>
@@ -17,11 +17,10 @@ const Pocetna: React.FC = () => {
         <div className='aboutWrapper'>
             <div className="aboutText">
                 <p>
-                   Cilj projekta je omogućiti korisnicima jednostavan pristup informacijama o volonterskim aktivnostima, 
-                   popisima volontera i volonterskih udruga. Kroz intuitivan dizajn i pregledan sadržaj, želi se potaknuti zajednicu 
-                   na sudjelovanje u volonterskim akcijama te olakšati povezivanje volontera s organizacijama koje im odgovaraju. 
-                   Projekt pruža sveobuhvatan pregled trenutnih aktivnosti, doprinoseći promicanju volonterstva i pozitivnih 
-                   društvenih promjena.
+                Cilj projekta je omogućiti korisnicima lakši pristup informacijama o volontiranju, volonterima i udruženjima. 
+                Kroz intuitivni dizajn i jasne sadržaje, želimo potaknuti zajednicu na sudjelovanje u volonterskim aktivnostima 
+                te olakšati spajanje volontera s relevantnim organizacijama. Projekt pruža sveobuhvatan pregled trenutnih aktivnosti 
+                kako bi potaknuo volonterstvo i pozitivne društvene promjene.
                 </p>
             </div>
             <div className="aboutImage">
@@ -36,7 +35,7 @@ const Pocetna: React.FC = () => {
             </div>
             <div className="formText">
                 <p>Stranicu izradila Marija Novokmet</p>
-                <p>studentica 1. godine diplomskog sveucilišnog studija Računarstva na FESB-u</p>
+                <p>studentica 1. godine diplomskog sveučilišnog studija Računarstva na FESB-u</p>
             </div>
         </div>
 

@@ -41,7 +41,7 @@ const ContactForm = () => {
        Poruka:
         <textarea name="message" value={formData.message} onChange={handleChange} required/>
       </label>
-      <button type="submit">Pošalji</button>
+      <button type="submit" className='formBtn'>Pošalji</button>
     </form>
   );
 };

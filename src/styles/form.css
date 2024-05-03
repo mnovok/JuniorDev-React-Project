@@ -11,6 +11,7 @@ label {
     display: block; 
     margin-bottom: 10px; 
     color: #333; 
+    font-size: large;
 }
   
 .formWrapper input,
@@ -27,8 +28,20 @@ textarea {
 textarea {
     resize: vertical; 
 }
-  
-button {
+
+.formBtn {
+  background-color: #007bff; 
+  color: #fff; 
+  padding: 12px 25px; 
+  letter-spacing: 1px;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  align-self: center;
+  font-size: medium;
+}
+
+.mobileMenuButton {
     background-color: #007bff; 
     color: #fff; 
     padding: 10px 20px; 
@@ -37,16 +50,18 @@ button {
     cursor: pointer; 
   }
   
-button:hover {
+.mobileMenuButton:hover {
     background-color: #0056b3;
 }
 
 .formText {
     flex: 1;
     text-align: left;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-left: 180px;
-    max-width: 500px;
+    font-size: larger;
+    line-height: 40px;
+    /* max-width: 500px; */
 }
   
 .form {

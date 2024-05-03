@@ -12,10 +12,11 @@ interface AssociationProps {
     status: string;
     isAdmin: boolean;
     onUpdateAssociation: (associationId: string, newStatus: string) => void;
+    onDeleteAssociation: () => void;
     cities: string[];
 }
 
-const Association: React.FC<AssociationProps> = ({id, name, address, city, status, isAdmin, onUpdateAssociation}) => {
+const Association: React.FC<AssociationProps> = ({id, name, address, city, status, isAdmin, onUpdateAssociation, onDeleteAssociation}) => {
 
     const handleAcceptAssociation = async (associationId: string) => {
         const confirmed = window.confirm("Jeste li sigurni da želite odobriti ovu udrugu?");
@@ -31,7 +32,7 @@ const Association: React.FC<AssociationProps> = ({id, name, address, city, statu
         }
         try {
             await axios.delete(`http://localhost:3001/associations/${associationId}`);
-            onUpdateAssociation(associationId, 'pending');
+            onDeleteAssociation();
             alert('Udruga odbijena!');
         } catch (error) {
             console.error('Pogreška prilikom odbijanja udruge:', error);
